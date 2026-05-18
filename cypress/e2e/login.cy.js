@@ -1,19 +1,12 @@
-describe('Login', () => {
+describe('Home', () => {
 
-  it('Deve realizar login com sucesso', () => {
+  it('Deve acessar a home com sucesso', () => {
 
-    cy.visit('https://automationexercise.com/login')
+    cy.visit('https://automationexercise.com')
 
-    cy.get('[data-qa="login-email"]')
-      .type('teste@email.com')
-
-    cy.get('[data-qa="login-password"]')
-      .type('123456')
-
-    cy.get('[data-qa="login-button"]')
-      .click()
-
-    cy.contains('Logged in as')
+    cy.contains('AutomationExercise')
       .should('be.visible')
+
   })
+
 })
