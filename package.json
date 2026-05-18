@@ -1,0 +1,10 @@
+{
+  "name": "teste-tecnico-qa",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.0"
+  }
+}
