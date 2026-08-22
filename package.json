@@ -1,8 +1,12 @@
 {
   "name": "teste-tecnico-qa",
   "version": "1.0.0",
+  "description": "Projeto de Quality Assurance com testes E2E automatizados utilizando Cypress.",
+  "private": true,
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "devDependencies": {
     "cypress": "^14.0.0"
