@@ -1,6 +1,6 @@
 describe('Home', () => {
 
-  it('Deve acessar a home com sucesso', () => {
+  it('Deve acessar a página inicial com sucesso', () => {
 
     cy.visit('https://automationexercise.com')
 
