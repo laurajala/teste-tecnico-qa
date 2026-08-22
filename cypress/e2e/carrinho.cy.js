@@ -1,7 +1,7 @@
 describe('Carrinho de Compras', () => {
 
   beforeEach(() => {
-    cy.visit('https://automationexercise.com')
+    cy.visit('/')
   })
 
   it('CT07 - Deve adicionar um produto ao carrinho com sucesso', () => {
@@ -30,6 +30,7 @@ describe('Carrinho de Compras', () => {
       cy.get('#cart_info_table')
         .should('contain.text', nomeProduto.trim())
     })
+
   })
 
 })
