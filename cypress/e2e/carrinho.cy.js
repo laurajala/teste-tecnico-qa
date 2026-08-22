@@ -9,28 +9,28 @@ describe('Carrinho de Compras', () => {
     cy.contains('Products')
       .click()
 
-    cy.get('.productinfo')
-      .first()
-      .within(() => {
-        cy.get('p')
-          .invoke('text')
-          .as('nomeProduto')
+    cy.url()
+      .should('include', '/products')
 
-        cy.contains('Add to cart')
-          .click({ force: true })
-      })
+    cy.get('.productinfo')
+      .should('be.visible')
+
+    cy.get('.productinfo a.add-to-cart[data-product-id="1"]')
+      .click({ force: true })
 
     cy.contains('View Cart')
+      .should('be.visible')
       .click()
+
+    cy.url()
+      .should('include', '/view_cart')
 
     cy.get('#cart_info_table')
       .should('be.visible')
 
-    cy.get('@nomeProduto').then((nomeProduto) => {
-      cy.get('#cart_info_table')
-        .should('contain.text', nomeProduto.trim())
-    })
-
+    cy.get('#product-1')
+      .should('exist')
+      .and('be.visible')
   })
 
 })
