@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧪 Teste Técnico QA
+# 🧪 Automation Exercise — QA Project
 
 ### Quality Assurance • Cypress • E2E Testing • CI/CD
 
@@ -19,7 +19,7 @@ Projeto de Quality Assurance desenvolvido para demonstrar a aplicação prática
 
 ## 🎯 Sobre o projeto
 
-Este projeto foi desenvolvido como parte de um **desafio técnico de Quality Assurance**.
+Este projeto foi desenvolvido originalmente como parte de um **desafio técnico de Quality Assurance** e posteriormente aprimorado como projeto de portfólio.
 
 A aplicação utilizada para os testes foi o **Automation Exercise**, plataforma pública destinada à prática de testes e automação web.
 
@@ -27,19 +27,19 @@ O projeto contempla diferentes etapas do processo de qualidade:
 
 **Requisitos → Critérios de Aceite → Casos de Teste → Execução → Automação → CI/CD**
 
-O objetivo não foi apenas desenvolver scripts automatizados, mas estruturar uma abordagem de QA envolvendo **planejamento, documentação, rastreabilidade e validação automatizada**.
+O objetivo é demonstrar não apenas a implementação de scripts automatizados, mas uma abordagem de QA envolvendo **planejamento, documentação, rastreabilidade e validação automatizada**.
 
 ---
 
 ## 🌐 Aplicação utilizada
 
-Os testes são executados sobre:
+Os testes são executados sobre a aplicação:
 
-**Automation Exercise**
+### Automation Exercise
 
-https://automationexercise.com
+`https://automationexercise.com`
 
-A URL da aplicação está centralizada no arquivo `cypress.config.js` por meio da propriedade `baseUrl`.
+A URL base da aplicação está centralizada no arquivo `cypress.config.js`, evitando sua repetição nos testes automatizados.
 
 ---
 
@@ -79,7 +79,7 @@ A URL da aplicação está centralizada no arquivo `cypress.config.js` por meio 
 
 ## 📖 Histórias de Usuário
 
-Foram documentadas histórias relacionadas aos principais fluxos analisados:
+Foram documentadas histórias relacionadas aos principais fluxos analisados no projeto.
 
 | ID | Funcionalidade |
 | --- | --- |
@@ -104,7 +104,7 @@ Foram considerados cenários relacionados a:
 - Credenciais inválidas
 - Autenticação
 - Adição de produto ao carrinho
-- Permanência do produto
+- Permanência do produto no carrinho
 - Informações apresentadas no carrinho
 
 📄 [Consultar critérios de aceite](./docs/criterios-de-aceite.md)
@@ -115,7 +115,7 @@ Foram considerados cenários relacionados a:
 
 Foram documentados **9 casos de teste**, contemplando fluxos positivos, negativos e validações complementares.
 
-### Cobertura documentada
+### 📊 Cobertura documentada
 
 | Categoria | Quantidade |
 | --- | ---: |
@@ -124,7 +124,7 @@ Foram documentados **9 casos de teste**, contemplando fluxos positivos, negativo
 | Testes negativos | **3** |
 | Validações complementares | **2** |
 
-Os casos possuem:
+Os casos de teste possuem:
 
 - Pré-condições
 - Passos de execução
@@ -140,7 +140,7 @@ Os casos possuem:
 
 ## 🔗 Rastreabilidade
 
-A documentação foi organizada para manter a relação entre requisito, comportamento esperado e validação.
+A documentação foi estruturada de forma a manter a relação entre requisito, comportamento esperado e validação.
 
 ```text
 História do Usuário
@@ -152,7 +152,7 @@ Caso de Teste
 Automação selecionada
 ```
 
-Exemplo:
+### Exemplo
 
 ```text
 HU03 — Carrinho de Compras
@@ -164,29 +164,52 @@ CT07 — Adicionar produto ao carrinho
 carrinho.cy.js
 ```
 
+Essa estrutura facilita a identificação da origem de cada cenário e sua relação com os testes executados.
+
 ---
 
-## 🤖 Automação com Cypress
+# 🤖 Automação de Testes
 
 A automação foi desenvolvida utilizando **Cypress + JavaScript**.
 
-Atualmente o projeto possui dois testes automatizados.
+Atualmente, o projeto possui dois cenários automatizados:
 
-### 🏠 Smoke Test — Home
+- 🏠 Smoke Test da página inicial
+- 🛒 Teste funcional E2E do carrinho de compras
+
+---
+
+## 🏠 Smoke Test — Home
 
 Arquivo:
 
 `cypress/e2e/home.cy.js`
 
-Valida se a página inicial da aplicação pode ser acessada corretamente e se um elemento esperado está visível.
+O cenário verifica se a página inicial da aplicação pode ser acessada corretamente e se um elemento esperado está visível.
 
-### 🛒 E2E — Carrinho de Compras
+### Fluxo
+
+```text
+Acessar aplicação
+      ↓
+Carregar página inicial
+      ↓
+Validar conteúdo esperado
+```
+
+Esse teste funciona como uma validação rápida da disponibilidade básica da aplicação.
+
+---
+
+## 🛒 E2E — Carrinho de Compras
 
 Arquivo:
 
 `cypress/e2e/carrinho.cy.js`
 
-O cenário automatizado valida o fluxo de:
+O cenário automatizado valida o fluxo de inclusão de um produto no carrinho.
+
+### Fluxo
 
 ```text
 Acessar aplicação
@@ -202,78 +225,76 @@ Acessar carrinho
 Validar produto adicionado
 ```
 
-A validação verifica especificamente se o produto selecionado está presente no carrinho.
+O teste verifica especificamente se o produto selecionado está presente no carrinho após a inclusão.
 
 ---
 
-## 📊 Cobertura automatizada
+## 📊 Cobertura Automatizada
 
-É importante diferenciar a documentação dos testes da cobertura atualmente automatizada.
+A documentação de testes possui uma cobertura maior do que a automação atualmente implementada.
 
-| Cenário | Tipo | Automação |
+| Cenário | Tipo | Situação |
 | --- | --- | --- |
-| Acesso à página inicial | Smoke | ✅ Automatizado |
+| Acesso à página inicial | Smoke Test | ✅ Automatizado |
 | Adicionar produto ao carrinho | E2E / Funcional | ✅ Automatizado |
-| Cadastro | Funcional | 📋 Documentado |
+| Cadastro de usuário | Funcional | 📋 Documentado |
 | Login | Funcional | 📋 Documentado |
-| Demais cenários do carrinho | Funcional | 📋 Documentado |
+| Validações adicionais do carrinho | Funcional | 📋 Documentado |
 
-> A automação contempla cenários selecionados do projeto, enquanto os demais permanecem documentados como parte da estratégia de testes.
+> A automação contempla cenários selecionados do projeto, enquanto os demais permanecem documentados como parte da estratégia de testes e podem ser incorporados futuramente à suíte automatizada.
 
 ---
 
-## ⚙️ Integração Contínua — CI/CD
+# ⚙️ Integração Contínua — CI/CD
 
-O projeto possui uma pipeline configurada utilizando **GitHub Actions**.
+O projeto possui integração contínua configurada utilizando **GitHub Actions**.
 
-A cada:
+A pipeline executa automaticamente a suíte Cypress quando ocorre:
 
-- `push` realizado na branch `main`
+- `push` na branch `main`
 - `pull_request` direcionado para a branch `main`
 
-a pipeline executa automaticamente os testes Cypress.
-
-### Fluxo da pipeline
+### 🔄 Fluxo da pipeline
 
 ```text
-Commit / Pull Request
+Push / Pull Request
         ↓
 GitHub Actions
         ↓
-Checkout do projeto
+Checkout do repositório
         ↓
 Configuração do Node.js
         ↓
 Instalação das dependências
         ↓
-Execução dos testes Cypress
+Execução do Cypress
         ↓
-Resultado da execução
+Resultado dos testes
 ```
 
-Workflow:
+O workflow está disponível em:
 
 `.github/workflows/pipeline.yml`
 
 ---
 
-## ✅ Status da automação
+## ✅ Status dos testes
 
-Os testes automatizados são executados através da pipeline do GitHub Actions.
+A suíte automatizada é validada através do GitHub Actions.
 
 ```text
 home.cy.js       ✅ PASS
 carrinho.cy.js   ✅ PASS
 ```
 
-Isso permite detectar automaticamente possíveis regressões nos cenários automatizados a cada nova alteração enviada ao repositório.
+A execução automática permite identificar falhas nos cenários automatizados após alterações realizadas no projeto.
 
 ---
 
-## 🗂️ Estrutura do projeto
+# 🗂️ Estrutura do Projeto
 
 ```text
-teste-tecnico-qa/
+automation-exercise-qa/
 │
 ├── .github/
 │   └── workflows/
@@ -300,7 +321,7 @@ teste-tecnico-qa/
 
 ---
 
-## 🛠️ Tecnologias e ferramentas
+# 🛠️ Tecnologias e Ferramentas
 
 <div align="center">
 
@@ -320,44 +341,59 @@ teste-tecnico-qa/
 
 ---
 
-## ▶️ Executando o projeto
+# ▶️ Como executar o projeto
 
-### Pré-requisitos
+## Pré-requisitos
+
+Para executar o projeto localmente é necessário possuir:
 
 - Node.js
 - npm
+- Git
 
-### Clone o repositório
+---
 
-```bash
-git clone https://github.com/laurajala/teste-tecnico-qa.git
-```
-
-### Acesse o projeto
+## 1️⃣ Clonar o repositório
 
 ```bash
-cd teste-tecnico-qa
+git clone https://github.com/laurajala/automation-exercise-qa.git
 ```
 
-### Instale as dependências
+---
+
+## 2️⃣ Acessar o projeto
+
+```bash
+cd automation-exercise-qa
+```
+
+---
+
+## 3️⃣ Instalar as dependências
 
 ```bash
 npm install
 ```
 
-### Abra o Cypress
+---
+
+## 4️⃣ Abrir o Cypress
+
+Para utilizar a interface gráfica:
 
 ```bash
 npm run cy:open
 ```
 
-### Execute os testes em modo headless
+---
+
+## 5️⃣ Executar em modo headless
 
 ```bash
 npm run cy:run
 ```
 
-ou:
+Também é possível executar através de:
 
 ```bash
 npm test
@@ -365,46 +401,77 @@ npm test
 
 ---
 
-## ⏱️ Estimativa do desafio
+# ⏱️ Estimativa do Desafio
 
-O planejamento inicial considerou aproximadamente **4 horas e 30 minutos** para análise, documentação, automação, configuração da pipeline e revisão da entrega.
+O planejamento inicial considerou aproximadamente **4 horas e 30 minutos** para realização das atividades.
+
+A estimativa contemplou:
+
+- 🔎 Análise dos fluxos
+- 📝 Documentação
+- 🤖 Desenvolvimento da automação
+- ⚙️ Configuração da pipeline
+- ✅ Revisão final
 
 📄 [Consultar estimativa de esforço](./docs/estimativa.md)
 
 ---
 
-## 💡 Competências demonstradas
+# 💡 Competências Demonstradas
 
-`Quality Assurance` • `Manual Testing` • `Functional Testing`
+### 🧪 Quality Assurance
 
-`Test Design` • `Test Cases` • `BDD` • `Acceptance Criteria`
+`Manual Testing` • `Functional Testing` • `Smoke Testing`
 
-`Positive Testing` • `Negative Testing` • `Smoke Testing`
+`Positive Testing` • `Negative Testing`
 
-`Cypress` • `JavaScript` • `E2E Testing`
+`Test Design` • `Test Cases`
 
-`Git` • `GitHub` • `CI/CD` • `GitHub Actions`
+### 📋 Análise e Documentação
 
-`Test Documentation` • `Requirements Traceability`
+`User Stories` • `Acceptance Criteria`
+
+`BDD` • `Given / When / Then`
+
+`Requirements Traceability`
+
+`Test Documentation`
+
+### 🤖 Test Automation
+
+`Cypress` • `JavaScript`
+
+`E2E Testing` • `Assertions`
+
+`DOM Validation`
+
+### ⚙️ Engenharia e CI/CD
+
+`Node.js` • `npm`
+
+`Git` • `GitHub`
+
+`GitHub Actions` • `CI/CD`
 
 ---
 
-## 🚀 Possíveis evoluções
+# 🚀 Possíveis Evoluções
 
-Como próximos passos, o projeto pode evoluir com:
+O projeto pode evoluir com a implementação de novos cenários e práticas de automação, como:
 
-- Ampliação da cobertura automatizada
-- Automação dos cenários de login
-- Automação do fluxo de cadastro
-- Criação de comandos reutilizáveis
-- Uso de fixtures para massa de testes
-- Evidências automáticas de execução
-- Relatórios de testes
-- Novos cenários de regressão
+- 🤖 Automação dos cenários de login
+- 👤 Automação do fluxo de cadastro
+- 🛒 Ampliação da cobertura do carrinho
+- 🧩 Criação de comandos reutilizáveis
+- 📦 Utilização de fixtures para massa de dados
+- 📸 Armazenamento de evidências de execução
+- 📊 Geração de relatórios automatizados
+- 🔄 Ampliação da suíte de regressão
+- ⚙️ Evolução da pipeline de integração contínua
 
 ---
 
-## 👩‍💻 Autora
+# 👩‍💻 Autora
 
 <div align="center">
 
